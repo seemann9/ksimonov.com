@@ -1,5 +1,5 @@
 export const metaData = {
-  baseUrl: "https://seemann9.github.io/",
+  baseUrl: "https://ksimonov.com",
   title: "Kirill Simonov",
   name: "Kirill Simonov",
   ogImage: "",

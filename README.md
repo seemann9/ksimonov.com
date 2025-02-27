@@ -1,4 +1,4 @@
-# seemann9.github.io
+# ksimonov.com
 
 My personal webpage based on the [Astrofolio](https://github.com/vikas5914/Astrofolio) template.
 Built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).

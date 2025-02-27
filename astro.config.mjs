@@ -10,9 +10,8 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import icon from "astro-icon";
 import opengraphImages, { presets } from "astro-opengraph-images";
 
-// https://astro.build/config
 export default defineConfig({
-  site: "https://seemann9.github.io",
+  site: "https://ksimonov.com",
   integrations: [
     mdx({
       image: {
