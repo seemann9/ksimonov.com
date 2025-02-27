@@ -1,16 +1,164 @@
 ---
+import Base from "../layouts/Base.astro";
+import { Icon } from "astro-icon/components";
+import { socialLinks } from "../config";
+import { Image } from "astro:assets";
+
+const papers = [
+    {
+        authors: "Fedor V. Fomin, Petr A. Golovach, Danil Sagunov, Kirill Simonov",
+        title: "Tree Containment Above Minimum Degree is FPT",
+        venue: "SODA 2024",
+        link: "https://epubs.siam.org/doi/abs/10.1137/1.9781611977912",
+    },
+    {
+        title: "Fixed-Parameter Tractability of Maximum Colored Path and Beyond",
+        authors: "Fedor V. Fomin, Petr A. Golovach, Tuukka Korhonen, Kirill Simonov, Giannos Stamoulis",
+        venue: "SODA 2023",
+        link: "https://doi.org/10.1137/1.9781611977554.ch142",
+    },
+    {
+        authors: "Cornelius Brand, Robert Ganian, Kirill Simonov",
+        title: "A Parameterized Theory of PAC Learning",
+        venue: "AAAI 2023",
+        link: "https://doi.org/10.1609/aaai.v37i6.25837",
+    },
+    {
+        authors: "Robert Ganian, Thekla Hamm, Viktoriia Korchemna, Karolina Okrasa, Kirill Simonov",
+        title: "The Complexity of k-Means Clustering when Little is Known",
+        venue: "ICML 2022",
+        link: "https://proceedings.mlr.press/v162/ganian22a.html",
+    },
+    /*
+    {
+        authors: "Ivan Bliznets, Danil Sagunov, Kirill Simonov",
+        title: "Fine-grained Complexity of Partial Minimum Satisfiability",
+        venue: "IJCAI 2022",
+        link: "https://doi.org/10.24963/ijcai.2022/247",
+    },
+    */
+    {
+        authors: "Steven Chaplick, Emilio Di Giacomo, Fabrizio Frati, Robert Ganian, Chrysanthi N. Raftopoulou, Kirill Simonov",
+        title: "Parameterized Algorithms for Upward Planarity",
+        venue: "SoCG 2022",
+        link: "https://doi.org/10.4230/LIPIcs.SoCG.2022.26",
+    },
+];
 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base>
+  <section>
+    <a href={socialLinks.dblp} target="_blank" rel="noopener noreferrer">
+      <Image
+        src="/profile.png"
+        alt="Profile photo"
+        class="rounded-full bg-gray-100 block lg:mt-5 mt-0 lg:mb-5 mb-10 mx-auto sm:float-right sm:ml-5 sm:mb-5 opacity-100 hover:opacity-90 hover:shadow-lg"
+        width={160}
+        height={160}
+      />
+    </a>
+
+    <h1 class="mb-4 text-2xl font-medium tracking-tight">
+      About me
+    </h1>
+
+    <div class="prose prose-neutral dark:prose-invert">
+    <p>I am an Associate Professor in Algorithms at University of Bergen, Norway. My research focus is on finding new ways to solve computationally hard problems via imposing structure on instances. I am passionate about fundamental graph-theoretic and matrix-based problems that are used as building blocks in modern applications.</p>
+<!--		<p>Starting from March 2025, I am an Associate Professor at University of Bergen. Previously, I was a post-doc at Hasso Plattner Institute, Potsdam (2022&ndash;2025) and at TU Wien (2021&ndash;2022). I got my PhD from University of Bergen in March 2021, and my Msc from Saint Petersburg State University in 2017.</p>-->
+    </div>
+
+    <h1 class="mb-4 mt-8 text-2xl font-medium tracking-tight">
+      Open PhD Position
+    </h1>
+    <div class="prose prose-neutral dark:prose-invert">
+	<p>
+    There is an open call for a PhD student to start under my supervision in Autumn 2025. See details and apply on{" "}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.jobbnorge.no/en/available-jobs/job/275767/phd-research-fellow-in-algorithms">
+          Jobbnorge
+        </a> until March 30. Feel free to {" "}
+        <a
+          target="_blank"
+          href={socialLinks.email}>
+          contact me</a> for any questions regarding the position.
+	</p>
+	</div>
+
+    <h1 class="mb-4 mt-8 text-2xl font-medium tracking-tight">
+      Selected publications
+    </h1>
+    <div class="prose prose-neutral dark:prose-invert">
+    <p>
+    See all publications on{" "}
+        <a
+          target="_blank"
+          href={socialLinks.dblp}>
+          DBLP
+        </a>.
+    </p>
+    {
+      papers.map((paper) => (
+          <p>
+	        <div class="flex gap-1"><Icon name=quill:paper class="text-3xl" /> <div><div class="text-lg font-medium -mt-1 -mb-7">{paper.title}</div>
+	        <br>
+            <div class="text-sm -mb-6">{paper.authors}</div>
+            <br>
+            <a href={paper.link} target="_blank" rel="noopener noreferrer">{paper.venue}</a>
+            </div>
+            </div>
+
+          </p>
+      ))
+    }
+	</div>
+    <h1 class="mb-4 mt-8 text-2xl font-medium tracking-tight">
+      My journey
+    </h1>
+    <ol class="relative border-s border-gray-200 dark:border-gray-700">
+    <li class="mb-10 ms-4">
+        <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+        <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">March 2025</time>
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Associate Professor, University of Bergen</h3>
+        <p class="flex gap-1 mb-4 text-base font-normal text-gray-500 dark:text-gray-400"><Icon name=icon-park-outline:mountain class="mt-0.5" /> Bergen, Norway</p>
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+  </svg></a>
+    </li>
+    <li class="mb-10 ms-4">
+        <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+        <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">October 2022</time>
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Postdoctoral Researcher, Hasso Plattner Institute</h3>
+        <p class="flex gap-1 text-base font-normal text-gray-500 dark:text-gray-400"><Icon name=hugeicons:berlin class="mt-0.5" /> Potsdam, Germany</p>
+    </li>
+    <li class="mb-10 ms-4">
+        <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+        <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">July 2021</time>
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Postdoctoral Researcher, TU Wien</h3>
+        <p class="flex gap-1 text-base font-normal text-gray-500 dark:text-gray-400"><Icon name=tdesign:palace-2 class="mt-0.5" /> Vienna, Austria</p>
+    </li>
+    <li class="mb-10 ms-4">
+        <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+        <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">April 2018</time>
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">PhD Candidate, University of Bergen</h3>
+        <p class="flex gap-1 text-base font-normal text-gray-500 dark:text-gray-400"><Icon name=icon-park-outline:mountain class="mt-0.5" /> Bergen, Norway</p>
+    </li>
+    <li class="mb-10 ms-4">
+        <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+        <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">September 2012</time>
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">BSc/MSc Student, Saint Petersburg State University</h3>
+        <p class="flex gap-1 text-base font-normal text-gray-500 dark:text-gray-400"><Icon name=icon-park-outline:palace class="mt-0.5" /> Saint Petersburg, Russia</p>
+    </li>
+</ol>
+<!--
+    <h2 class="mb-8 text-2xl font-medium tracking-tight">
+      Research Interests
+    </h2>
+    <div class="prose prose-neutral dark:prose-invert">
+	<p>
+    Parameterized Algorithms, Graph Theory, Efficient Algorithms, Clustering, Learning Theory.
+	</p>
+	</div>-->
+  </section>
+</Base>
