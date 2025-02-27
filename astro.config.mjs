@@ -12,7 +12,7 @@ import opengraphImages, { presets } from "astro-opengraph-images";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astrofolio.pages.dev",
+  site: "https://seemann9.github.io",
   integrations: [
     mdx({
       image: {
@@ -61,7 +61,7 @@ export default defineConfig({
     }),
     sitemap(),
     opengraphImages({
-      render: presets.waveSvg,
+      render: presets.blackAndWhite,
       options: {
         fonts: [
           {

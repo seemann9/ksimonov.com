@@ -2,9 +2,9 @@ export const metaData = {
   baseUrl: "https://seemann9.github.io/",
   title: "Kirill Simonov",
   name: "Kirill Simonov",
-  ogImage: "/opengraph-image.png",
+  ogImage: "",
   description:
-    "My personal webpage.",
+    "My personal webpage",
 };
 
 export const socialLinks = {
